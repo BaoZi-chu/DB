@@ -1,0 +1,71 @@
+package smalltalk;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+
+public class LogInFrame extends JFrame {
+	/**
+	 * 初始生成窗口位置（左）
+	 */
+	private static int positionL_inital=100;
+	/**
+	 * 初始生成窗口位置（右）
+	 */
+	private static int positionR_inital=100;
+	/**
+	 * 生成窗口数量
+	 */
+	private static int amount=0;
+	private JTextField accountText;
+	private JPasswordField passwordText;
+	private JButton logINButton;
+	public LogInFrame() {
+		amount++;
+		passwordText= new JPasswordField();
+        passwordText.setSize(100,30);
+        JLabel l1 = new JLabel("账号:");
+        l1.setSize(100,30);
+        JLabel l2 = new JLabel("密码:");
+        l2.setSize(100,30);
+        logINButton = new JButton("登录");
+        logINButton.setBounds(90, 90, 60, 40);
+        accountText = new JTextField();
+        accountText.setSize(100,30);
+
+
+
+//        add(l1);
+//        add(accountText);
+//        add(l2);
+//        add(passwordText);
+        JPanel ap = new JPanel();
+        ap.setLayout(new GridLayout(1,2));
+        ap.add(l1);
+        ap.add(accountText);
+        JPanel pp = new JPanel();
+        pp.setLayout(new GridLayout(1,2));
+        pp.add(l2);
+        pp.add(passwordText);
+        
+        JPanel bp = new JPanel();
+        bp.add(logINButton);
+        setLayout(new java.awt.GridLayout(3,1)); 
+        add(ap);
+        add(pp);
+        add(bp);
+        
+        setBounds(positionL_inital+10*amount, positionR_inital+10*amount, 400, 300);
+        setResizable(false);
+		setVisible(true);
+		
+
+	}
+}
